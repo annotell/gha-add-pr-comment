@@ -18,7 +18,7 @@ export async function getExistingComment(
     per_page: 100,
   }
 
-  let found: { id: number; body?: string } | undefined
+  let found: ExistingIssueComment | undefined
 
   for await (const comments of octokit.paginate.iterator(
     octokit.rest.issues.listComments,
